@@ -1,17 +1,18 @@
 import Navigo from "navigo";
+import AboutPage from "./page/about";
+import HomePage from "./page/home";
 
 const router = new Navigo("/");
-
 const render = (content) => {
-    document.getElementById("app").innerHTML = content;
+    document.getElementById("app").innerHTML = content.print();
 }
 
 router.on({
     "/": () => {
-        render("Home");
+        render(HomePage);
     },
     "/about": () => {
-        render("About");
+        render(AboutPage);
     }
 });
 // router.on("/about", function() {
