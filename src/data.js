@@ -1,23 +1,28 @@
 const menuList = [
     {
         id: 1,
-        name: 'Trang chủ'
+        name: 'Trang chủ',
+        path: '/'
     },
     {
         id: 2,
-        name: 'Giới thiệu'
+        name: 'Giới thiệu',
+        path: '/about'
     },
     {
         id: 3,
-        name: 'Chương trình đào tạo'
+        name: 'Tin tức',
+        path: '/news'
     },
     {
         id: 4,
-        name: 'Góc sinh viên'
+        name: 'Góc sinh viên',
+        path: '#'
     },
     {
         id: 5,
-        name: 'Tuyển dụng'
+        name: 'Tuyển dụng',
+        path: '#'
     }
 ];
 
