@@ -1,4 +1,4 @@
-import { newsList } from "../page/data";
+import { newsList } from "../data";
 
 const News = {
     print() {

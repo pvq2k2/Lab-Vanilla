@@ -1,4 +1,4 @@
-import { menuList } from "../page/data";
+import { menuList } from "../data";
 
 const Menu = {
     print() {

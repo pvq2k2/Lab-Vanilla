@@ -1,4 +1,4 @@
-import { studentList } from "../page/data";
+import { studentList } from "../data";
 
 const Student = {
     print() {
