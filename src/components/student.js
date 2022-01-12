@@ -4,7 +4,7 @@ const Student = {
     print() {
         return `
         <h2 class="title text-[#272f54] uppercase font-bold text-[20px] my-[20px] hover:text-[#cb7802] ease-in duration-300">HOẠT ĐỘNG SINH VIÊN</h2>
-        <div class="student-content grid grid-cols-3 gap-[30px]">
+        <div class="student-content grid grid-cols-3 gap-[30px] pb-3">
         ${studentList.map( ({img, title, content}) => `
         <div class="student-content-item group border-2 px-[25px] py-[15px] hover:border-[#272f54] ease-in duration-300 shadow-blue-900">
         <div class="student-content-item-img">

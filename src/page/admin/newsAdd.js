@@ -1,15 +1,18 @@
+import NavAdmin from "./navAdmin";
+
 const NewsAdd = {
     print() {
         return /* html */`
-        <div class="md:grid md:grid-cols-3 md:gap-6">
-        <div class="md:col-span-1">
-          <div class="px-4 sm:px-0">
-            <h3 class="text-lg font-medium leading-6 text-gray-900">Profile</h3>
-            <p class="mt-1 text-sm text-gray-600">
-              This information will be displayed publicly so be careful what you share.
-            </p>
-          </div>
+        ${NavAdmin.print()}
+        <header class="bg-white shadow">
+        <div class="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8 flex justify-between">
+          <h1 class="text-3xl font-bold text-gray-900">
+            News Add
+          </h1>
+          <a href="/admin/news"><button class="bg-blue-500 py-2 px-3 text-white rounded-[10px] hover:bg-indigo-700 ease-in-out duration-200">News List</button></a>
         </div>
+      </header>
+        <div class="m-auto max-w-7xl mt-5">
         <div class="mt-5 md:mt-0 md:col-span-2">
           <form action="#" method="POST">
             <div class="shadow sm:rounded-md sm:overflow-hidden">
