@@ -7,6 +7,7 @@ import SignUpPage from "./page/signUp";
 import Dashboard from "./page/admin/dashboard";
 import NewsAd from "./page/admin/news";
 import NewsAdd from "./page/admin/newsAdd";
+import newsEdit from "./page/admin/newsEdit";
 
 const router = new Navigo("/", { linksSelector: "a" });
 const render = (content) => {
@@ -41,10 +42,12 @@ router.on({
         render(NewsAd.print());
     },
     "/admin/news/add": () => {
-        render(NewsAdd.print())
+        render(NewsAdd.print());
     },
-    "/admin/news/:id/edit": () => {
-
+    "/admin/news/:id/edit": ({ data }) => {
+        const { id } = data;
+        // console.log(id);
+        render(newsEdit.print(id));
     }
 });
 // router.on("/about", function() {
