@@ -1,4 +1,4 @@
-import NavAdmin from "./navAdmin";
+import NavAdmin from "../../components/navAdmin";
 
 const Dashboard = {
     print() {

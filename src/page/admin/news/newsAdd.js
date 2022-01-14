@@ -1,19 +1,22 @@
-import { newsList } from '../../data';
-import NavAdmin from './navAdmin';
+import NavAdmin from "../../../components/navAdmin";
 
-const newsEdit = {
-    print(id) {
-        console.log(newsList);
-        const news = newsList.find((post) => post.id == id);
-        console.log(news);
+const NewsAdd = {
+    print() {
         return /* html */`
         ${NavAdmin.print()}
         <header class="bg-white shadow">
         <div class="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8 flex justify-between">
           <h1 class="text-3xl font-bold text-gray-900">
-            News Edit
+            News Add
           </h1>
-          <a href="/admin/news"><button class="bg-blue-500 py-2 px-3 text-white rounded-[10px] hover:bg-indigo-700 ease-in-out duration-200">News List</button></a>
+          <a href="/admin/news" class="sm:ml-3">
+          <button type="button" class="inline-flex items-center px-4 py-2 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
+          <svg class="-ml-1 mr-2 h-5 w-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+          <path fill-rule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clip-rule="evenodd" />
+          </svg>
+            Close
+          </button>
+        </a>
         </div>
       </header>
         <div class="m-auto max-w-7xl mt-5">
@@ -21,35 +24,25 @@ const newsEdit = {
           <form action="#" method="POST">
             <div class="shadow sm:rounded-md sm:overflow-hidden">
               <div class="px-4 py-5 bg-white space-y-6 sm:p-6">
-                <div class="grid grid-cols-3 gap-6">
-                  <div class="col-span-3 sm:col-span-2">
-                    <label for="company-website" class="block text-sm font-medium text-gray-700">
-                      Title
-                    </label>
-                    <div class="mt-1 flex rounded-md shadow-sm">
-                      <input type="text" name="company-website" id="company-website" class="shadow-sm focus:ring-indigo-500 focus:border-indigo-500 mt-1 block w-full sm:text-sm border border-gray-300 rounded-md p-1" placeholder="Title..." value="${news.title}">
-                    </div>
-                  </div>
-                </div>
-    
                 <div>
-                  <label for="about" class="block text-sm font-medium text-gray-700">
-                    Content
-                  </label>
-                  <div class="mt-1">
-                    <textarea id="about" name="about" rows="3" class="shadow-sm focus:ring-indigo-500 focus:border-indigo-500 mt-1 block w-full sm:text-sm border border-gray-300 rounded-md p-1" placeholder="Content...">${news.content}</textarea>
-                  </div>
-                </div>
-    
-                <div>
-                <label for="about" class="block text-sm font-medium text-gray-700">
-                Current photo
+                <label for="title" class="block text-sm font-medium text-gray-700">
+                  Title
                 </label>
                 <div class="mt-1">
-                  <img src="${news.img}" class="h-1/4 w-1/4 rounded-[10px]">
+                  <textarea id="title" name="title" rows="3" class="shadow-sm focus:ring-indigo-500 focus:border-indigo-500 mt-1 block w-full sm:text-sm border border-gray-300 rounded-md p-2" placeholder="Title..."></textarea>
                 </div>
               </div>
 
+                <div>
+                  <label for="content" class="block text-sm font-medium text-gray-700">
+                    Content
+                  </label>
+                  <div class="mt-1">
+                    <textarea id="content" name="content" rows="3" class="shadow-sm focus:ring-indigo-500 focus:border-indigo-500 mt-1 block w-full sm:text-sm border border-gray-300 rounded-md p-2" placeholder="Content..."></textarea>
+                  </div>
+                </div>
+    
+    
                 <div>
                   <label class="block text-sm font-medium text-gray-700">
                     Image
@@ -75,7 +68,10 @@ const newsEdit = {
               </div>
               <div class="px-4 py-3 bg-gray-50 text-right sm:px-6">
                 <button type="submit" class="inline-flex justify-center py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
-                  Save
+                <svg class="-ml-1 mr-2 h-5 w-5" x-description="Heroicon name: solid/check" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                </svg>
+                Save
                 </button>
               </div>
             </div>
@@ -86,4 +82,4 @@ const newsEdit = {
         `;
     }
 }
-export default newsEdit;
+export default NewsAdd;

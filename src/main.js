@@ -5,9 +5,9 @@ import NewsPage from "./page/news";
 import SignInPage from "./page/signIn";
 import SignUpPage from "./page/signUp";
 import Dashboard from "./page/admin/dashboard";
-import NewsAd from "./page/admin/news";
-import NewsAdd from "./page/admin/newsAdd";
-import newsEdit from "./page/admin/newsEdit";
+import NewsAd from "./page/admin/news/index";
+import NewsAdd from "./page/admin/news/newsAdd";
+import newsEdit from "./page/admin/news/newsEdit";
 
 const router = new Navigo("/", { linksSelector: "a" });
 const render = (content) => {
