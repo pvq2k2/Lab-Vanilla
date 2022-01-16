@@ -3,9 +3,7 @@ import NavAdmin from '../../../components/navAdmin';
 
 const newsEdit = {
     print(id) {
-        console.log(newsList);
         const news = newsList.find((post) => post.id == id);
-        console.log(news);
         return /* html */`
         ${NavAdmin.print()}
         <header class="bg-white shadow">
