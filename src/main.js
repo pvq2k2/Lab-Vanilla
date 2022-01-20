@@ -10,45 +10,21 @@ import NewsAdd from "./page/admin/news/newsAdd";
 import newsEdit from "./page/admin/news/newsEdit";
 
 const router = new Navigo("/", { linksSelector: "a" });
-const render = (content) => {
-    document.getElementById("app").innerHTML = content;
-}
+const render = async (content, id) => {
+    document.getElementById("app").innerHTML = await content.print(id);
+};
 
 router.on({
-    "/": () => {
-        render(HomePage.print());
-    },
-    "/about": () => {
-        render(AboutPage.print());
-    },
-    "/news": () => {
-        render(NewsPage.print());
-    },
-    "/signup": () => {
-        render(SignUpPage.print());
-    },
-    "/signin": () => {
-        render(SignInPage.print());
-    },
-
-
-    "/admin": () => {
-        render(Dashboard.print());
-    },
-    "/admin/dashboard": () => {
-        render(Dashboard.print());
-    },
-    "/admin/news": () => {
-        render(NewsAd.print());
-    },
-    "/admin/news/add": () => {
-        render(NewsAdd.print());
-    },
-    "/admin/news/:id/edit": ({ data }) => {
-        const { id } = data;
-        // console.log(id);
-        render(newsEdit.print(id));
-    }
+    "/": () => render(HomePage),
+    "/about": () => render(AboutPage),
+    "/news": () => render(NewsPage),
+    "/signup": () => render(SignUpPage),
+    "/signin": () => render(SignInPage),
+    "/admin": () => render(Dashboard),
+    "/admin/dashboard": () => render(Dashboard),
+    "/admin/news": () => render(NewsAd),
+    "/admin/news/add": () => render(NewsAdd),
+    "/admin/news/:id/edit": (value) => render(newsEdit, value.data.id),
 });
 // router.on("/about", function() {
 //     console.log("About")

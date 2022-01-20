@@ -1,10 +1,12 @@
-import { newsList } from '../../../data';
-import NavAdmin from '../../../components/navAdmin';
+// import { newsList } from "../../../data";
+import NavAdmin from "../../../components/navAdmin";
 
 const newsEdit = {
     print(id) {
-        const news = newsList.find((post) => post.id == id);
-        return /* html */`
+        // const news = newsList.find((post) => post.id == id);
+        return fetch(`https://61e7a9a9e32cd90017acbc1b.mockapi.io/news/${id}`)
+            .then((response) => response.json())
+            .then((data) => /* html */`
         ${NavAdmin.print()}
         <header class="bg-white shadow">
         <div class="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8 flex justify-between">
@@ -31,7 +33,7 @@ const newsEdit = {
                 Title
               </label>
               <div class="mt-1">
-                <textarea id="title" name="title" rows="3" class="shadow-sm focus:ring-indigo-500 focus:border-indigo-500 mt-1 block w-full sm:text-sm border border-gray-300 rounded-md p-2" placeholder="Title...">${news.title}</textarea>
+                <textarea id="title" name="title" rows="3" class="shadow-sm focus:ring-indigo-500 focus:border-indigo-500 mt-1 block w-full sm:text-sm border border-gray-300 rounded-md p-2" placeholder="Title...">${data.title}</textarea>
               </div>
             </div>
 
@@ -40,7 +42,7 @@ const newsEdit = {
                   Content
                 </label>
                 <div class="mt-1">
-                  <textarea id="content" name="content" rows="3" class="shadow-sm focus:ring-indigo-500 focus:border-indigo-500 mt-1 block w-full sm:text-sm border border-gray-300 rounded-md p-2" placeholder="Content...">${news.content}</textarea>
+                  <textarea id="content" name="content" rows="3" class="shadow-sm focus:ring-indigo-500 focus:border-indigo-500 mt-1 block w-full sm:text-sm border border-gray-300 rounded-md p-2" placeholder="Content...">${data.content}</textarea>
                 </div>
               </div>
     
@@ -49,7 +51,7 @@ const newsEdit = {
                 Current photo
                 </label>
                 <div class="mt-1">
-                  <img src="${news.img}" class="h-1/4 w-1/4 rounded-[10px]">
+                  <img src="${data.img}" class="h-1/4 w-1/4 rounded-[10px]">
                 </div>
               </div>
 
@@ -89,7 +91,7 @@ const newsEdit = {
         </div>
       </div>
     </div>
-        `;
-    }
-}
+        `);
+    },
+};
 export default newsEdit;
